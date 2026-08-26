@@ -2,10 +2,12 @@ import io
 import os
 
 from flask import Flask, request, send_file, jsonify
+from flask_cors import CORS
 from kokoro_onnx import Kokoro
 import soundfile as sf
 
 app = Flask(__name__)
+CORS(app)
 
 MODEL_PATH = os.environ.get("KOKORO_MODEL_PATH", "kokoro-v1.0.int8.onnx")
 VOICES_PATH = os.environ.get("KOKORO_VOICES_PATH", "voices-v1.0.bin")
