@@ -1,5 +1,7 @@
 import io
 import os
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["ORT_NUM_THREADS"] = "1"
 
 from flask import Flask, request, send_file, jsonify
 from flask_cors import CORS
